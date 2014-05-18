@@ -1,20 +1,20 @@
 #include "testApp.h"
+#define OUTPUT_PIN 7
 
 //--------------------------------------------------------------
 void testApp::setup(){
-	outputPin = 4;
 	blinkCount = 0;
 	blinkSwitch = true;
 
 	cout << "SETUP" << endl;
-	cout << "outputPin: " << outputPin << endl;
+	cout << "outputPin: " << OUTPUT_PIN << endl;
 	cout << "blinkCount: " << blinkCount << endl;
 	cout << "blinkSwitch: " << blinkSwitch << endl;
 	cout << "initPinModeVal: " <<  pinModeVal(blinkSwitch) << endl;
  
 	wiringPiSetup();
-	pinMode(outputPin, OUTPUT);
-	digitalWrite(outputPin, pinModeVal(blinkSwitch));
+	pinMode(OUTPUT_PIN, OUTPUT);
+	digitalWrite(OUTPUT_PIN, pinModeVal(blinkSwitch));
 }
 
 //--------------------------------------------------------------
@@ -27,7 +27,7 @@ void testApp::update(){
 		cout << "### Switch pin mode!" << endl;
 		blinkCount = 0;
 		blinkSwitch = !blinkSwitch;
-		digitalWrite(outputPin, pinModeVal(blinkSwitch));
+		digitalWrite(OUTPUT_PIN, pinModeVal(blinkSwitch));
 	}
 }
 
