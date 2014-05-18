@@ -6,11 +6,11 @@ void testApp::setup(){
 	blinkCount = 0;
 	blinkSwitch = true;
 
-	ofLogVerbose() << "SETUP";
-	ofLogVerbose() << "outputPin: " << outputPin;
-	ofLogVerbose() << "blinkCount: " << blinkCount;
-	ofLogVerbose() << "blinkSwitch: " << blinkSwitch;
-	ofLogVerbose() << "initPinModeVal: " <<  pinModeVal(blinkSwitch);
+	cout << "SETUP" << endl;
+	cout << "outputPin: " << outputPin << endl;
+	cout << "blinkCount: " << blinkCount << endl;
+	cout << "blinkSwitch: " << blinkSwitch << endl;
+	cout << "initPinModeVal: " <<  pinModeVal(blinkSwitch) << endl;
  
 	wiringPiSetup();
 	pinMode(outputPin, OUTPUT);
@@ -21,10 +21,10 @@ void testApp::setup(){
 void testApp::update(){
 	blinkCount++;
 
-	ofLogVerbose() << "update blinkCount: " << blinkCount;
+	cout << "update blinkCount: " << blinkCount << endl;
 	
 	if(blinkCount > 300) {
-		ofLogVerbose() << "### Switch pin mode!";
+		cout << "### Switch pin mode!" << endl;
 		blinkCount = 0;
 		blinkSwitch = !blinkSwitch;
 		digitalWrite(outputPin, pinModeVal(blinkSwitch));
