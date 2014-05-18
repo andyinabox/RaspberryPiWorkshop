@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxWiringPi.h"
+#include "wiringPi.h"
 
 class testApp : public ofBaseApp{
 	public:
