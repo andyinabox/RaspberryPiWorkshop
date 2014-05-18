@@ -20,7 +20,7 @@ class testApp : public ofBaseApp{
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
 
-	ofxWiringPi wpi; // we don't even really need this yet
+	// ofxWiringPi wpi; // we don't even really need this yet
 	int outputPin;
 	int blinkCount;
 	bool blinkSwitch;
