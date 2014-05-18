@@ -8,7 +8,7 @@ void testApp::setup(){
 
 	wiringPiSetup();
 	pinMode(outputPin, OUTPUT);
-	digitalWrite(outputPin, pinMode(blinkSwitch));
+	digitalWrite(outputPin, pinModeVal(blinkSwitch));
 }
 
 //--------------------------------------------------------------
@@ -17,11 +17,11 @@ void testApp::update(){
 	if(blinkCount > 300) {
 		blinkCount = 0;
 		blinkSwitch = !blinkSwitch;
-		digitalWrite(outputPin, pinMode(blinkSwitch));
+		digitalWrite(outputPin, pinModeVal(blinkSwitch));
 	}
 }
 
-void testApp::pinMode(sw) {
+uint8_t testApp::pinModeVal(bool sw) {
 	if(sw) {
 		return HIGH;
 	} else {

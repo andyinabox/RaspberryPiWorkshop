@@ -24,5 +24,5 @@ class testApp : public ofBaseApp{
 	int outputPin;
 	int blinkCount;
 	bool blinkSwitch;
-	uint8_t pinMode(bool sw);
+	uint8_t pinModeVal(bool sw);
 };
