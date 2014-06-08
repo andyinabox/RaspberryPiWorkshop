@@ -1,7 +1,10 @@
 #pragma once
 
 #include "ofMain.h"
-#include "wiringPi.h"
+
+#ifdef TARGET_RASPBERRY_PI
+	#include "wiringPi.h"
+#endif
 
 class testApp : public ofBaseApp{
 	public:

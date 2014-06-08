@@ -7,14 +7,18 @@ void testApp::setup(){
 
 	cout << "SETUP" << endl;
 	cout << "input pin: " << INPUT_PIN << endl;
- 
-	wiringPiSetup();
+ 	
+ 	#ifdef TARGET_RASPBERRY_PI
+		wiringPiSetup();
+	#endif
 }
 
 //--------------------------------------------------------------
 void testApp::update() {
 
-	cout << "in value: " << digitalRead(INPUT_PIN) << endl;
+	#ifdef TARGET_RASPBERRY_PI
+		cout << "in value: " << digitalRead(INPUT_PIN) << endl;
+	#endif
 }
 
 
